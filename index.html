@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор доставки</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Калькулятор доставки</h1>
+      <div id="package-container">
+        <div class="package" id="package1">
+          <h2>Посилка 1</h2>
+          <label for="length">Довжина (см):</label>
+          <input type="number" id="length1" name="length" required />
+          <label for="width">Ширина (см):</label>
+          <input type="number" id="width1" name="width" required />
+          <label for="height">Висота (см):</label>
+          <input type="number" id="height1" name="height" required />
+          <label for="weight">Фактична вага (кг):</label>
+          <input type="number" id="weight1" name="weight" required />
+          <button class="remove-package" onclick="removePackage(1)">
+            Видалити посилку
+          </button>
+        </div>
+      </div>
+      <button id="add-package">Додати посилку</button>
+      <br /><br />
+      <label for="value">Оціночна вартість (зл):</label>
+      <input type="number" id="value" name="value" required />
+      <br /><br />
+      <button id="calculate">Розрахувати</button>
+      <h2>Результат:</h2>
+      <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
