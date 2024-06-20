@@ -85,7 +85,7 @@ function calculate() {
   if (value <= 1000) {
     insurance = value * 0.01;
   } else {
-    insurance = 10 + (value - 1000) * 0.1;
+    insurance = 10 + (value - 1000) * 0.11;
   }
 
   resultText += `<p class="total-result">Сума страхування: ${insurance.toFixed(
