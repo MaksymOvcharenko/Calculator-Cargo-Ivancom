@@ -12,12 +12,14 @@
       <div id="package-container">
         <div class="package" id="package1">
           <h2>Посилка 1</h2>
-          <label for="length">Довжина (см):</label>
-          <input type="number" id="length1" name="length" required />
-          <label for="width">Ширина (см):</label>
-          <input type="number" id="width1" name="width" required />
-          <label for="height">Висота (см):</label>
-          <input type="number" id="height1" name="height" required />
+          <div class="dimensions">
+            <label for="length">Довжина (см):</label>
+            <input type="number" id="length1" name="length" required />
+            <label for="width">Ширина (см):</label>
+            <input type="number" id="width1" name="width" required />
+            <label for="height">Висота (см):</label>
+            <input type="number" id="height1" name="height" required />
+          </div>
           <label for="weight">Фактична вага (кг):</label>
           <input type="number" id="weight1" name="weight" required />
           <button class="remove-package" onclick="removePackage(1)">

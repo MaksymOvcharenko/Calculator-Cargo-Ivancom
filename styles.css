@@ -16,13 +16,25 @@ body {
   width: 400px;
 }
 
+.dimensions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dimensions label,
+.dimensions input {
+  flex: 1;
+  margin: 5px;
+}
+
 label {
   display: block;
   margin-top: 10px;
 }
 
 input {
-  width: 100%;
+  width: calc(100% - 10px);
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 10px;

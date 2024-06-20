@@ -12,12 +12,14 @@ function addPackage() {
   newPackage.id = `package${packageCount}`;
   newPackage.innerHTML = `
         <h2>Посилка ${packageCount}</h2>
-        <label for="length">Довжина (см):</label>
-        <input type="number" id="length${packageCount}" name="length" required>
-        <label for="width">Ширина (см):</label>
-        <input type="number" id="width${packageCount}" name="width" required>
-        <label for="height">Висота (см):</label>
-        <input type="number" id="height${packageCount}" name="height" required>
+        <div class="dimensions">
+            <label for="length">Довжина (см):</label>
+            <input type="number" id="length${packageCount}" name="length" required>
+            <label for="width">Ширина (см):</label>
+            <input type="number" id="width${packageCount}" name="width" required>
+            <label for="height">Висота (см):</label>
+            <input type="number" id="height${packageCount}" name="height" required>
+        </div>
         <label for="weight">Фактична вага (кг):</label>
         <input type="number" id="weight${packageCount}" name="weight" required>
         <button class="remove-package" onclick="removePackage(${packageCount})">Видалити посилку</button>
@@ -64,7 +66,7 @@ function calculate() {
   } else if (totalWeight <= 25) {
     cost = 110;
   } else {
-    cost = 110 + (totalWeight - 25) * 5;
+    cost = totalWeight * 5;
   }
 
   const value = parseFloat(document.getElementById("value").value);
