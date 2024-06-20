@@ -65,7 +65,7 @@ function calculate() {
       } else if (finalWeight <= 25) {
         cost = 110;
       } else {
-        cost = 110 + (finalWeight - 25) * 5;
+        cost = finalWeight * 5;
       }
 
       resultText += `
