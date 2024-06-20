@@ -78,7 +78,9 @@ button:hover {
 #result {
   margin-top: 20px;
 }
-
+.package {
+  margin-top: 40px;
+}
 .package-result {
   background: #f9f9f9;
   border: 1px solid #ddd;
