@@ -25,6 +25,7 @@ function addPackage() {
         <button class="remove-package" onclick="removePackage(${packageCount})">Видалити посилку</button>
     `;
   packageContainer.appendChild(newPackage);
+  packageContainer.scrollIntoView({ behavior: "smooth" }); // Прокручування до нової посилки
 }
 
 function removePackage(id) {
@@ -84,7 +85,7 @@ function calculate() {
   if (value <= 1000) {
     insurance = value * 0.01;
   } else {
-    insurance = 10 + (value - 1000) * 0.11;
+    insurance = 10 + (value - 1000) * 0.1;
   }
 
   resultText += `<p class="total-result">Сума страхування: ${insurance.toFixed(

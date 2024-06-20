@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-y: auto; /* Додаємо для можливості гортання */
 }
 
 .container {
@@ -14,6 +15,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
+  max-height: 100vh; /* Додаємо для обмеження висоти контейнера */
+  overflow-y: auto; /* Додаємо для можливості гортання всередині контейнера */
 }
 
 .dimensions {
@@ -59,10 +62,17 @@ button:hover {
 .remove-package {
   background: #ff4b4b;
   margin-top: 10px;
+  margin-bottom: 40px;
+  float: right; /* Додаємо для переміщення кнопки вправо */
 }
 
 .remove-package:hover {
   background: #c70000;
+}
+
+#add-package {
+  float: left; /* Додаємо для переміщення кнопки вліво */
+  margin-bottom: 20px; /* Додаємо для кращого розміщення */
 }
 
 #result {
@@ -80,4 +90,9 @@ button:hover {
 .total-result {
   font-weight: bold;
   margin-top: 20px;
+}
+.cena {
+  display: flex;
+  margin-top: 15px;
+  width: 100%;
 }
