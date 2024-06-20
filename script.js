@@ -35,6 +35,8 @@ function removePackage(id) {
 function calculate() {
   let totalWeight = 0;
   let totalVolumetricWeight = 0;
+  let totalCost = 0;
+  let resultText = "";
 
   for (let i = 1; i <= packageCount; i++) {
     if (document.getElementById(`package${i}`)) {
@@ -46,27 +48,34 @@ function calculate() {
       const volumetricWeight = (length * width * height) / 4000;
       totalVolumetricWeight += volumetricWeight;
       const finalWeight = Math.max(weight, volumetricWeight);
-
       totalWeight += finalWeight;
+
+      let cost = 0;
+      if (finalWeight <= 0.5) {
+        cost = 40;
+      } else if (finalWeight <= 5) {
+        cost = 45;
+      } else if (finalWeight <= 10) {
+        cost = 60;
+      } else if (finalWeight <= 15) {
+        cost = 80;
+      } else if (finalWeight <= 20) {
+        cost = 90;
+      } else if (finalWeight <= 25) {
+        cost = 110;
+      } else {
+        cost = 110 + (finalWeight - 25) * 5;
+      }
+
+      resultText += `
+                <div class="package-result">
+                    <p>Посилка ${i} - Фактична вага: ${weight.toFixed(2)} кг</p>
+                    <p>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
+                    <p>Вартість: ${cost.toFixed(2)} zł</p>
+                </div>
+            `;
+      totalCost += cost;
     }
-  }
-
-  let cost = 0;
-
-  if (totalWeight <= 0.5) {
-    cost = 40;
-  } else if (totalWeight <= 5) {
-    cost = 45;
-  } else if (totalWeight <= 10) {
-    cost = 60;
-  } else if (totalWeight <= 15) {
-    cost = 80;
-  } else if (totalWeight <= 20) {
-    cost = 90;
-  } else if (totalWeight <= 25) {
-    cost = 110;
-  } else {
-    cost = totalWeight * 5;
   }
 
   const value = parseFloat(document.getElementById("value").value);
@@ -78,12 +87,13 @@ function calculate() {
     insurance = 10 + (value - 1000) * 0.11;
   }
 
-  const totalCost = cost + insurance;
-  document.getElementById(
-    "result"
-  ).innerText = `Фактична вага: ${totalWeight.toFixed(
+  resultText += `<p class="total-result">Сума страхування: ${insurance.toFixed(
     2
-  )} кг\nОб'ємна вага: ${totalVolumetricWeight.toFixed(
+  )} zł</p>`;
+  totalCost += insurance;
+  resultText += `<p class="total-result">Загальна вартість доставки: ${totalCost.toFixed(
     2
-  )} кг\nВартість доставки: ${totalCost.toFixed(2)} zł`;
+  )} zł</p>`;
+
+  document.getElementById("result").innerHTML = resultText;
 }
