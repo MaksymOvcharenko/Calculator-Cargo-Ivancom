@@ -3,6 +3,7 @@ document.getElementById("add-package").addEventListener("click", addPackage);
 document.getElementById("calculate").addEventListener("click", calculate);
 
 let packageCount = 1;
+const url = "https://open.er-api.com/v6/latest/UAH";
 
 function addPackage() {
   packageCount++;
@@ -145,7 +146,8 @@ function calculate() {
           } else if (totalWeight > 5.01) {
             cost = 100 + (totalWeight - 5) * 10;
           }
-        } else if (insurance > 50000.01) {
+        } else if (value > 50000.01) {
+          insurance = (value / 10) * 0.01;
           // Расчет стоимости в зависимости от веса для очень больших оценочных стоимостей
           if (totalWeight < 2.01) {
             cost = 100;
