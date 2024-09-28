@@ -18,7 +18,9 @@ body {
   max-height: 100vh; /* Додаємо для обмеження висоти контейнера */
   overflow-y: auto; /* Додаємо для можливості гортання всередині контейнера */
 }
-
+#ua-pl-cont {
+  margin-top: 70px;
+}
 .dimensions {
   display: flex;
   justify-content: space-between;
@@ -32,7 +34,7 @@ body {
 }
 
 label {
-  display: block;
+  display: flex;
   margin-top: 10px;
 }
 
@@ -44,7 +46,9 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
+#commerce,
+#delivery-in-poland {
+}
 button {
   background: #007bff;
   color: white;
