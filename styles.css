@@ -24,6 +24,7 @@ body {
 .dimensions {
   display: flex;
   justify-content: space-between;
+  gap: 4px;
   align-items: center;
 }
 
@@ -84,6 +85,13 @@ button:hover {
 }
 .package {
   margin-top: 40px;
+}
+#package-size {
+  flex-direction: column;
+  text-align: center;
+  && span {
+    font-size: 14px;
+  }
 }
 .package-result {
   background: #f9f9f9;
