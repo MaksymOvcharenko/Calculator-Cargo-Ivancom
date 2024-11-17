@@ -26,6 +26,24 @@ body {
   overflow-y: auto; /* Додаємо для можливості гортання всередині контейнера */
 }
 
+.calc {
+  width: 306px;
+  padding-right: 5px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 17px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #f8f8f8;
+
+  /* тень 2 */
+  box-shadow: 0px 52px 14px 0px rgba(110, 110, 110, 0),
+    0px 33px 13px 0px rgba(110, 110, 110, 0.01),
+    0px 19px 11px 0px rgba(110, 110, 110, 0.05),
+    0px 8px 8px 0px rgba(110, 110, 110, 0.09),
+    0px 2px 5px 0px rgba(110, 110, 110, 0.1);
+}
+
 .general-h1 {
   color: #000;
   text-align: center;
@@ -81,41 +99,61 @@ body {
   line-height: 120%; /* 24px */
 }
 
+.div-calc {
+}
 #ua-pl-cont {
   margin-top: 70px;
 }
 .dimensions {
   display: flex;
-  justify-content: space-between;
-  gap: 4px;
-  align-items: center;
+  justify-content: space-between; /* Розташування полів по ширині */
+  gap: 20px; /* Відступ між групами label+input */
 }
 
-.dimensions label,
-.dimensions input {
-  flex: 1;
-  margin: 5px;
-}
-
-label {
-  display: flex;
+#length1,
+#width1,
+#height1 {
+  width: 83px;
+  height: 27px;
   margin-top: 10px;
 }
 
+#package-size {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+/* .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+} */
+
+label {
+}
+
 input {
-  width: calc(100% - 10px);
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 5px;
+  background: #d6e0f5;
 }
 #commerce,
 #delivery-in-poland {
 }
 button {
-  background: #007bff;
-  color: white;
+  color: #05173b;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+  background-color: transparent;
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
@@ -123,39 +161,78 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
+/* button:hover {
   background: #0056b3;
-}
+} */
 
 .remove-package {
-  background: #ff4b4b;
+  display: flex;
+  color: #ff543e;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
   margin-top: 10px;
   margin-bottom: 40px;
   float: right; /* Додаємо для переміщення кнопки вправо */
 }
 
-.remove-package:hover {
-  background: #c70000;
+.dimensions-second {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column; /* Лейбл над інпутом */
+  align-items: flex-start; /* Вирівнювання по лівому краю */
+}
+
+#package-weight {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+
+#weight1 {
+  width: 121px;
+  height: 27px;
+  margin-top: 10px;
+}
+
+#value {
+  width: 142px;
+  height: 27px;
+  margin-top: 10px;
 }
 
 #add-package {
+  display: flex;
   float: left; /* Додаємо для переміщення кнопки вліво */
   margin-bottom: 20px; /* Додаємо для кращого розміщення */
 }
-
+.svg-add {
+  margin-right: 4.7px;
+}
+.icon-add {
+  fill: #05173b;
+  stroke: #05173b;
+}
 #result {
   margin-top: 20px;
 }
 .package {
   margin-top: 40px;
 }
-#package-size {
-  flex-direction: column;
-  text-align: center;
-  && span {
-    font-size: 14px;
-  }
-}
+
 .package-result {
   background: #f9f9f9;
   border: 1px solid #ddd;
@@ -168,8 +245,44 @@ button:hover {
   font-weight: bold;
   margin-top: 20px;
 }
-.cena {
+
+#calculate {
   display: flex;
-  margin-top: 15px;
-  width: 100%;
+  width: 281px;
+  height: 40px;
+  padding: 5px 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #0184d6;
+  color: #fff;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 16.8px */
+}
+
+#calc-h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 28.8px */
+}
+
+#calc-h2 {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
 }
