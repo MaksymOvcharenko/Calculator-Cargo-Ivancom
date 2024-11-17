@@ -1,0 +1,8 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-sparow" viewBox="0 0 55 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.5714" d="M52.571 16l-13.714-13.714M52.571 16l-13.714 13.714M52.571 16h-24M16 16h5.714"></path>
+<path fill="#ff543e" style="fill: var(--color2, #ff543e)" d="M9.143 16c0 2.525-2.047 4.571-4.571 4.571s-4.571-2.047-4.571-4.571c0-2.525 2.047-4.571 4.571-4.571s4.571 2.047 4.571 4.571z"></path>
+</symbol>
+</defs>
+</svg>

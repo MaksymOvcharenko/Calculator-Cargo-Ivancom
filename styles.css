@@ -12,12 +12,75 @@ body {
 .container {
   background: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  border-radius: 20px;
+  background: #f8f8f8;
+
+  /* тень 2 */
+  box-shadow: 0px 52px 14px 0px rgba(110, 110, 110, 0),
+    0px 33px 13px 0px rgba(110, 110, 110, 0.01),
+    0px 19px 11px 0px rgba(110, 110, 110, 0.05),
+    0px 8px 8px 0px rgba(110, 110, 110, 0.09),
+    0px 2px 5px 0px rgba(110, 110, 110, 0.1);
+  width: 306px;
   max-height: 100vh; /* Додаємо для обмеження висоти контейнера */
   overflow-y: auto; /* Додаємо для можливості гортання всередині контейнера */
 }
+
+.general-h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 28.8px */
+}
+.general-p {
+  margin: 0 auto;
+  width: 211px;
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+.general-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  list-style: none;
+}
+.general-li {
+  width: 238px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #0184d6;
+
+  &:hover,
+  &:focus {
+    background-color: #05173b;
+  }
+}
+.general-a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+}
+
 #ua-pl-cont {
   margin-top: 70px;
 }
