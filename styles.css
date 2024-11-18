@@ -28,8 +28,8 @@ body {
 
 .calc {
   width: 306px;
-  padding-right: 5px;
-  padding-left: 20px;
+  padding-right: 12.5px;
+  padding-left: 12.5px;
   padding-bottom: 20px;
   padding-top: 17px;
   flex-shrink: 0;
@@ -110,15 +110,15 @@ body {
   gap: 20px; /* Відступ між групами label+input */
 }
 
-#length1,
-#width1,
-#height1 {
+.length1,
+.width1,
+.height1 {
   width: 83px;
   height: 27px;
   margin-top: 10px;
 }
 
-#package-size {
+.package-size {
   color: #000;
   text-align: center;
   font-family: "Tilda Sans";
@@ -127,12 +127,6 @@ body {
   font-weight: 400;
   line-height: 120%; /* 16.8px */
 }
-/* .field {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
-} */
 
 label {
 }
@@ -192,6 +186,15 @@ button {
   align-items: flex-start; /* Вирівнювання по лівому краю */
 }
 
+.field-cena {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Лейбл над інпутом */
+  align-items: flex-start; /* Вирівнювання по лівому краю */
+}
+
 #package-weight {
   color: #000;
   text-align: center;
@@ -202,7 +205,7 @@ button {
   line-height: 120%; /* 16.8px */
 }
 
-#weight1 {
+.weight1 {
   width: 121px;
   height: 27px;
   margin-top: 10px;
@@ -228,17 +231,32 @@ button {
 }
 #result {
   margin-top: 20px;
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
 }
+
+.result-h2 {
+  display: flex;
+  margin-top: 30px;
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+}
+
 .package {
   margin-top: 40px;
 }
 
-.package-result {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.div-package-result {
 }
 
 .total-result {
@@ -265,6 +283,10 @@ button {
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 16.8px */
+  &:hover,
+  &:focus {
+    background-color: #05173b;
+  }
 }
 
 #calc-h1 {
@@ -285,4 +307,47 @@ button {
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 24px */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.check-commerce {
+  color: #000;
+  text-align: center;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+
+.span-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 5px;
+  background: #d6e0f5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+.checkbox:checked + .check-commerce .span-checkbox {
+  border: none;
+  fill: #05173b;
+}
+
+.checkbox:focus + .check-commerce .span-checkbox {
+  border-color: #4d5ae5;
 }

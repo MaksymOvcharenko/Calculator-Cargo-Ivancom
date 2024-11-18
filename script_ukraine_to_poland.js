@@ -12,15 +12,20 @@ function addPackage() {
   newPackage.innerHTML = `
         <h2>Посилка ${packageCount}</h2>
         <div class="dimensions">
-            <label for="length${packageCount}">Довжина (см):</label>
-            <input type="number" id="length${packageCount}" name="length" required>
-            <label for="width${packageCount}">Ширина (см):</label>
-            <input type="number" id="width${packageCount}" name="width" required>
-            <label for="height${packageCount}">Висота (см):</label>
-            <input type="number" id="height${packageCount}" name="height" required>
+            <label class="package-size" for="length${packageCount}">Довжина (см): <input type="number" class="length1" id="length${packageCount}" name="length" required> </label>
+            
+            <label class="package-size" for="width${packageCount}">Ширина (см): <input type="number" class="width1" id="width${packageCount}" name="width" required></label>
+            
+            <label class="package-size" for="height${packageCount}">Висота (см): <input type="number" class="height1" id="height${packageCount}" name="height" required></label>
+            
         </div>
+        <div class="dimensions-second">
+        <div class="field">
         <label for="weight${packageCount}">Фактична вага (кг):</label>
-        <input type="number" id="weight${packageCount}" name="weight" required>
+        
+        <input type="number" class="weight1" id="weight${packageCount}" name="weight" required>
+        </div>
+        </div>
         <button class="remove-package" type="button" data-package-id="${packageCount}">Видалити посилку</button>
     `;
   packageContainer.appendChild(newPackage);
@@ -63,8 +68,8 @@ function calculate() {
       totalWeight += finalWeight;
 
       resultText += `
-        <div class="package-result">
-          <p>Посилка ${i} - Фактична вага: ${weight.toFixed(2)} кг</p>
+        <div class="div-package-result">
+          <p class>Посилка ${i} - Фактична вага: ${weight.toFixed(2)} кг</p>
           <p>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
         </div>
       `;
