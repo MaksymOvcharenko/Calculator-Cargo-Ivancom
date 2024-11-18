@@ -13,23 +13,48 @@
         <div class="package" id="package1">
           <h2>Посилка 1</h2>
           <div class="dimensions">
-            <label for="length" id="package-size"
+            <label for="length" id="package-size" class="package-size"
               >Довжина: <span>(см)</span>
-              <input type="number" id="length1" name="length" required
+              <input
+                type="number"
+                id="length1"
+                class="length1"
+                name="length"
+                required
             /></label>
 
-            <label for="width" id="package-size"
+            <label for="width" id="package-size" class="package-size"
               >Ширина: <span>(см)</span
-              ><input type="number" id="width1" name="width" required
+              ><input
+                type="number"
+                id="width1"
+                class="width1"
+                name="width"
+                required
             /></label>
 
-            <label for="height" id="package-size"
+            <label for="height" id="package-size" class="package-size"
               >Висота: <span>(см)</span
-              ><input type="number" id="height1" name="height" required
+              ><input
+                type="number"
+                id="height1"
+                class="height1"
+                name="height"
+                required
             /></label>
           </div>
-          <label for="weight">Фактична вага (кг):</label>
-          <input type="number" id="weight1" name="weight" required />
+          <div class="dimensions-second">
+            <div class="field">
+              <label for="weight">Фактична вага (кг):</label>
+              <input
+                type="number"
+                class="weight1"
+                id="weight1"
+                name="weight"
+                required
+              />
+            </div>
+          </div>
           <button class="remove-package" onclick="removePackage(1)">
             <svg class="svg-remove" width="17" height="14">
               <use
@@ -42,29 +67,61 @@
         </div>
       </div>
 
-      <button id="add-package">
+      <button id="add-package" class="add-package">
         <svg class="svg-add" width="17" height="17">
           <use class="icon-add" href="./image/icons.svg#icon-add"></use>
         </svg>
         Додати посилку
       </button>
       <br /><br />
-      <label class="cena" for="value">Оціночна вартість (грн):</label>
-      <input type="number" id="value" name="value" required />
-      <br /><br />
-      <label for="commerce"
-        >Комерційні відправлення:
-        <input type="checkbox" id="commerce" name="commerce"
-      /></label>
 
       <br /><br />
-      <label for="delivery-in-poland"
+      <!-- <label class="check-commerce" for="commerce"
+        >Комерція  -->
+      <div class="field-cena">
+        <label class="cena" for="value">Оціночна вартість (грн):</label>
+        <input type="number" id="value" name="value" required />
+      </div>
+      <br /><br />
+      <input
+        class="checkbox visually-hidden"
+        type="checkbox"
+        name="commerce"
+        value="true"
+        id="commerce"
+      />
+      <label class="check-commerce" for="commerce"
+        >Комерція
+        <span class="span-checkbox">
+          <svg class="icon-checkbox" width="11" height="10">
+            <use href="./image/icons.svg#icon-tick"></use>
+          </svg> </span
+      ></label>
+
+      <br /><br />
+      <!-- <label class="check-commerce" for="delivery-in-poland"
         >Доставка по Польщі:
         <input
           type="checkbox"
           id="delivery-in-poland"
           name="delivery-in-poland"
-      /></label>
+      /></label> -->
+      <div class="div-check">
+        <input
+          class="checkbox visually-hidden"
+          type="checkbox"
+          name="delivery-in-poland"
+          value="true"
+          id="delivery-in-poland"
+        />
+        <label class="check-commerce" for="delivery-in-poland"
+          >Доставка по Польщі
+          <span class="span-checkbox">
+            <svg class="icon-checkbox" width="11" height="10">
+              <use href="./image/icons.svg#icon-tick"></use>
+            </svg> </span
+        ></label>
+      </div>
 
       <br /><br />
       <button id="calculate">Розрахувати</button>

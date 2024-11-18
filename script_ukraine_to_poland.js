@@ -12,16 +12,23 @@ function addPackage() {
   newPackage.innerHTML = `
         <h2>Посилка ${packageCount}</h2>
         <div class="dimensions">
-            <label for="length${packageCount}">Довжина (см):</label>
-            <input type="number" id="length${packageCount}" name="length" required>
-            <label for="width${packageCount}">Ширина (см):</label>
-            <input type="number" id="width${packageCount}" name="width" required>
-            <label for="height${packageCount}">Висота (см):</label>
-            <input type="number" id="height${packageCount}" name="height" required>
+            <label class="package-size" for="length${packageCount}">Довжина (см): <input type="number" class="length1" id="length${packageCount}" name="length" required> </label>
+            
+            <label class="package-size" for="width${packageCount}">Ширина (см): <input type="number" class="width1" id="width${packageCount}" name="width" required></label>
+            
+            <label class="package-size" for="height${packageCount}">Висота (см): <input type="number" class="height1" id="height${packageCount}" name="height" required></label>
+            
         </div>
+        <div class="dimensions-second">
+        <div class="field">
         <label for="weight${packageCount}">Фактична вага (кг):</label>
-        <input type="number" id="weight${packageCount}" name="weight" required>
-        <button class="remove-package" type="button" data-package-id="${packageCount}">Видалити посилку</button>
+        
+        <input type="number" class="weight1" id="weight${packageCount}" name="weight" required>
+        </div>
+        </div>
+        <button class="remove-package" type="button" data-package-id="${packageCount}"><svg class="svg-remove" width="17" height="14">
+    <use class="icon-remove" href="./image/icons.svg#icon-remove"></use>
+  </svg>Видалити посилку</button>
     `;
   packageContainer.appendChild(newPackage);
   packageContainer.scrollIntoView({ behavior: "smooth" });
@@ -63,9 +70,14 @@ function calculate() {
       totalWeight += finalWeight;
 
       resultText += `
-        <div class="package-result">
-          <p>Посилка ${i} - Фактична вага: ${weight.toFixed(2)} кг</p>
-          <p>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
+        <div class="div-package-result">
+          <p class="result-p">Посилка ${i} - <svg class="svg-result" width="20" height="20">
+    <use class="icon-result" href="./image/icons.svg#icon-waga"></use>
+  </svg>Фактична вага: ${weight.toFixed(2)} кг</p>
+          
+  <p class="result-p"><svg class="svg-result" width="20" height="20">
+    <use class="icon-result" href="./image/icons.svg#icon-box"></use>
+  </svg>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
         </div>
       `;
     }
@@ -162,13 +174,13 @@ function calculate() {
     }
   }
 
-  resultText += `<p class="total-result">Сума страхування: ${insurance.toFixed(
-    2
-  )} zł</p>`;
+  resultText += `<div class="div-result">
+  <p class="total-result">Сума страхування: ${insurance.toFixed(2)} zł</p>`;
   totalCost = cost + insurance;
   resultText += `<p class="total-result">Загальна вартість доставки: ${totalCost.toFixed(
     2
-  )} zł</p>`;
+  )} zł</p>
+  </div>`;
 
   document.getElementById("result").innerHTML = resultText;
 }
