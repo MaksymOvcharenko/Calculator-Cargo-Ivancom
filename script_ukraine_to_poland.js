@@ -26,7 +26,9 @@ function addPackage() {
         <input type="number" class="weight1" id="weight${packageCount}" name="weight" required>
         </div>
         </div>
-        <button class="remove-package" type="button" data-package-id="${packageCount}">Видалити посилку</button>
+        <button class="remove-package" type="button" data-package-id="${packageCount}"><svg class="svg-remove" width="17" height="14">
+    <use class="icon-remove" href="./image/icons.svg#icon-remove"></use>
+  </svg>Видалити посилку</button>
     `;
   packageContainer.appendChild(newPackage);
   packageContainer.scrollIntoView({ behavior: "smooth" });
@@ -69,8 +71,13 @@ function calculate() {
 
       resultText += `
         <div class="div-package-result">
-          <p class>Посилка ${i} - Фактична вага: ${weight.toFixed(2)} кг</p>
-          <p>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
+          <p class="result-p">Посилка ${i} - <svg class="svg-result" width="20" height="20">
+    <use class="icon-result" href="./image/icons.svg#icon-waga"></use>
+  </svg>Фактична вага: ${weight.toFixed(2)} кг</p>
+          
+  <p class="result-p"><svg class="svg-result" width="20" height="20">
+    <use class="icon-result" href="./image/icons.svg#icon-box"></use>
+  </svg>Об'ємна вага: ${volumetricWeight.toFixed(2)} кг</p>
         </div>
       `;
     }
@@ -167,13 +174,13 @@ function calculate() {
     }
   }
 
-  resultText += `<p class="total-result">Сума страхування: ${insurance.toFixed(
-    2
-  )} zł</p>`;
+  resultText += `<div class="div-result">
+  <p class="total-result">Сума страхування: ${insurance.toFixed(2)} zł</p>`;
   totalCost = cost + insurance;
   resultText += `<p class="total-result">Загальна вартість доставки: ${totalCost.toFixed(
     2
-  )} zł</p>`;
+  )} zł</p>
+  </div>`;
 
   document.getElementById("result").innerHTML = resultText;
 }
