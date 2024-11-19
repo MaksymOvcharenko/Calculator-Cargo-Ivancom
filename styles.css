@@ -141,7 +141,7 @@ body {
 }
 .dimensions {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   /* Відступ між групами label+input */
 }
 input {
