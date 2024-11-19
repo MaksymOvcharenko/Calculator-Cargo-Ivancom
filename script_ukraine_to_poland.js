@@ -71,7 +71,8 @@ function calculate() {
 
       resultText += `
         <div class="div-package-result">
-          <p class="result-p">Посилка ${i} - <svg class="svg-result" width="20" height="20">
+        <p class="result-p">Посилка ${i}: </p>
+          <p class="result-p"><svg class="svg-result" width="20" height="20">
     <use class="icon-result" href="./image/icons.svg#icon-waga"></use>
   </svg>Фактична вага: ${weight.toFixed(2)} кг</p>
           
