@@ -10,6 +10,32 @@ body {
 }
 
 .container {
+  --sb-track-color: #f8f8f8;
+  --sb-thumb-color: #d6e0f5;
+  --sb-size: 11px;
+}
+
+.container::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .container {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.container {
   background: white;
   padding: 20px;
   border-radius: 20px;
@@ -49,6 +75,15 @@ body {
   text-align: center;
   font-family: "Tilda Sans";
   font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 28.8px */
+}
+.general-h2 {
+  color: #000;
+  text-align: left;
+  font-family: "Tilda Sans";
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 28.8px */

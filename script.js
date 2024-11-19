@@ -11,7 +11,7 @@ function addPackage() {
   newPackage.classList.add("package");
   newPackage.id = `package${packageCount}`;
   newPackage.innerHTML = `
-        <h2>Посилка ${packageCount}</h2>
+        <h2 class="general-h2">Посилка ${packageCount}</h2>
         <div class="dimensions">  
         <label class="package-size" for="length">Довжина (см):<input type="number" class="length1" id="length${packageCount}" name="length" required></label>
             
