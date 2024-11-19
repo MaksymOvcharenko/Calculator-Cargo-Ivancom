@@ -21,7 +21,7 @@ function addPackage() {
         </div>
         <div class="dimensions-second">
         <div class="field">
-        <label for="weight${packageCount}">Фактична вага (кг):</label>
+        <label for="weight${packageCount}" id="package-weight">Фактична вага (кг):</label>
         
         <input type="number" class="weight1" id="weight${packageCount}" name="weight" required>
         </div>

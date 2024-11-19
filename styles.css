@@ -228,7 +228,7 @@ button {
   font-weight: 400;
   line-height: 120%;
   background-color: transparent;
-  padding: 10px 15px;
+  padding: 10px 0px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
