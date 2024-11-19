@@ -126,39 +126,41 @@ function calculate() {
       totalWeight += finalWeight;
 
       let cost = 0;
-      if (finalWeight <= 0.5) {
-        cost = 40;
-      } else if (finalWeight <= 5) {
-        cost = 45;
+      if (finalWeight <= 5) {
+        cost = 55;
       } else if (finalWeight <= 10) {
-        cost = 60;
+        cost = 70;
       } else if (finalWeight <= 15) {
-        cost = 80;
-      } else if (finalWeight <= 20) {
         cost = 90;
-      } else if (finalWeight <= 25) {
+      } else if (finalWeight <= 20) {
         cost = 110;
+      } else if (finalWeight <= 25) {
+        cost = 130;
       } else {
-        cost = finalWeight * 5;
+        cost = finalWeight * 5.5;
       }
 
       // Добавляем доплату, если любая сторона превышает 120 см
       if (length > 120 || width > 120 || height > 120) {
         cost += 6;
-        resultText += `<p>Доплата за посилку ${i}: розмір перевищує 120 см, +6 zł</p>`;
+        resultText += `<p class="result-p">Доплата за посилку ${i}: розмір перевищує 120 см, +6 zł</p>`;
       }
 
       // Добавляем доплату, если вес превышает 30 кг (фактический или объемный)
       if (finalWeight > 30) {
         cost += 12;
-        resultText += `<p>Доплата за посилку ${i}: вага перевищує 30 кг, +12 zł</p>`;
+        resultText += `<p class="result-p">Доплата за посилку ${i}: вага перевищує 30 кг, +12 zł</p>`;
       }
 
       resultText += `
                 <div class="div-package-result">
-                    <p class="result-p">Посилка ${i} - <svg class="svg-result" width="20" height="20">
-    <use class="icon-result" href="./image/icons.svg#icon-waga"></use>
-  </svg>Фактична вага: ${weight.toFixed(2)} кг</p>
+                    <p class="result-p">Посилка ${i}  
+                   
+                    <div class="result-p">
+                      <svg class="svg-result" width="20" height="20">
+      <use class="icon-result" href="./image/icons.svg#icon-waga"></use>
+    </svg>Фактична вага: ${weight.toFixed(2)} кг
+                    </div></p>
 
                     <p class="result-p"><svg class="svg-result" width="20" height="20">
     <use class="icon-result" href="./image/icons.svg#icon-box"></use>
