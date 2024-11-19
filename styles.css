@@ -141,10 +141,13 @@ body {
 }
 .dimensions {
   display: flex;
-  justify-content: center; /* Розташування полів по ширині */
+  gap: 32px;
   /* Відступ між групами label+input */
 }
-
+input {
+  padding-block: 0;
+  padding-inline: 0;
+}
 .length1,
 .width1,
 .height1 {
@@ -154,6 +157,7 @@ body {
 }
 
 .package-size {
+  width: 80px;
   color: #000;
   text-align: left;
   font-family: "Tilda Sans";
