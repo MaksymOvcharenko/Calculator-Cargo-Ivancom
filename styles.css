@@ -157,7 +157,7 @@ input {
 }
 
 .package-size {
-  width: 80px;
+  /* width: 80px; */
   color: #000;
   text-align: left;
   font-family: "Tilda Sans";
