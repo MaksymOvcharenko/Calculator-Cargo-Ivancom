@@ -141,8 +141,8 @@ body {
 }
 .dimensions {
   display: flex;
-  justify-content: space-between; /* Розташування полів по ширині */
-  gap: 20px; /* Відступ між групами label+input */
+  justify-content: center; /* Розташування полів по ширині */
+  /* Відступ між групами label+input */
 }
 
 .length1,
