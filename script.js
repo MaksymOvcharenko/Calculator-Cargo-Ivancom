@@ -141,16 +141,6 @@ function calculate() {
       }
 
       // Добавляем доплату, если любая сторона превышает 120 см
-      if (length > 120 || width > 120 || height > 120) {
-        cost += 6;
-        resultText += `<p class="result-p">Доплата за посилку ${i}: розмір перевищує 120 см, +6 zł</p>`;
-      }
-
-      // Добавляем доплату, если вес превышает 30 кг (фактический или объемный)
-      if (finalWeight > 30) {
-        cost += 12;
-        resultText += `<p class="result-p">Доплата за посилку ${i}: вага перевищує 30 кг, +12 zł</p>`;
-      }
 
       resultText += `
                 <div class="div-package-result">
@@ -169,8 +159,28 @@ function calculate() {
                     <p class="result-p"><svg class="svg-result" width="20" height="20">
     <use class="icon-result" href="./image/icons.svg#icon-price"></use>
   </svg>Вартість: ${cost.toFixed(2)} zł</p>
+  
                 </div>
             `;
+      if (length > 120 || width > 120 || height > 120) {
+        cost += 6;
+        resultText += `<p class="doplata"><svg class="svg-result" width="20" height="20">
+    <use class="icon-result-doplata" href="./image/icons.svg#icon-price"></use>
+  </svg>Доплата : <span class="span-doplata"> 6 zł </span> 
+        розмір перевищує 120 см
+        </p>`;
+      }
+
+      // Добавляем доплату, если вес превышает 30 кг (фактический или объемный)
+      if (finalWeight > 30) {
+        cost += 12;
+        resultText += `<p class="doplata"><svg class="svg-result" width="20" height="20">
+    <use class="icon-result-doplata" href="./image/icons.svg#icon-price"></use>
+  </svg>Доплата :  <span class="span-doplata"> 12 zł </span>
+   вага перевищує 30 кг
+  </p>`;
+      }
+
       totalCost += cost;
     }
   }

@@ -406,3 +406,25 @@ button {
   font-weight: 700;
   line-height: 120%; /* 16.8px */
 }
+.doplata {
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-align: left;
+  font-family: "Tilda Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+.icon-result-doplata {
+  fill: #ff543e;
+}
+.span-doplata {
+  color: #ff543e;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.span-doplata-down {
+  margin-left: 24px;
+}
