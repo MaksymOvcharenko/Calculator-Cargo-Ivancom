@@ -37,7 +37,7 @@ body {
 
 .container {
   background: white;
-  padding: 32px;
+  padding: 14px;
   border-radius: 20px;
   background: #f8f8f8;
 
@@ -148,7 +148,7 @@ body {
 .length1,
 .width1,
 .height1 {
-  width: 83px;
+  width: 90px;
   height: 27px;
   margin-top: 10px;
 }
