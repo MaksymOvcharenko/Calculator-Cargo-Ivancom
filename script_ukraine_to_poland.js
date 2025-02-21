@@ -176,7 +176,7 @@ function calculate() {
   }
 
   resultText += `<div class="div-result">
-  <p class="total-result">Сума страхування: ${insurance.toFixed(2)} zł</p>`;
+  <p class="total-result">Страховий платіж: ${insurance.toFixed(2)} zł</p>`;
   totalCost = cost + insurance;
   resultText += `<p class="total-result">Загальна вартість доставки: ${totalCost.toFixed(
     2
